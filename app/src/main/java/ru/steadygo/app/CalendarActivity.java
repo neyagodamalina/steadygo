@@ -13,6 +13,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.squareup.timessquare.CalendarPickerView;
+
+import java.util.Calendar;
+import java.util.Date;
+
 public class CalendarActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,6 +45,16 @@ public class CalendarActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        /* Input CalendarActivity */
+        Calendar nextYear = Calendar.getInstance();
+        nextYear.add(Calendar.YEAR, 1);
+
+        CalendarPickerView calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
+        Date today = new Date();
+        calendar.init(today, nextYear.getTime())
+                .withSelectedDate(today);
+
     }
 
     @Override
