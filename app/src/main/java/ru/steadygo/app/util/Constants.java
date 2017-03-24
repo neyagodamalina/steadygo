@@ -5,5 +5,5 @@ package ru.steadygo.app.util;
  */
 
 public interface Constants {
-    public static final String LOG_TAG = "steadygo";
+    public static final String LOG_TAG = "steadygo1";
 }
