@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp"
+    >
+
+    <TextView
+        android:id="@+id/day_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/CalendarCell.CalendarDate"/>
+
+    <TextView
+        android:id="@+id/day_count_event_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="55"
+        android:layout_gravity="right"
+        style="@style/CalendarCell.CalendarDate"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"
+        />
+</LinearLayout>

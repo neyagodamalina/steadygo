@@ -18,13 +18,15 @@ import com.squareup.timessquare.CalendarPickerView;
 import java.util.Calendar;
 import java.util.Date;
 
+import ru.steadygo.app.ui.CalendarDayViewAdapter;
+
 public class CalendarActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        setContentView(R.layout.left_menu_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -52,9 +54,9 @@ public class CalendarActivity extends AppCompatActivity
 
         CalendarPickerView calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
         Date today = new Date();
-        calendar.init(today, nextYear.getTime())
-                .withSelectedDate(today);
-
+        //calendar.setDecorators(Arrays.<CalendarCellDecorator>asList(new CalendarCell()));
+        calendar.setCustomDayView(new CalendarDayViewAdapter());
+        calendar.init(today, nextYear.getTime()).withSelectedDate(today);
     }
 
     @Override
